@@ -16,11 +16,11 @@ def scrape(requests):
         link = main['href']
         image_src = str(main.find('img')['srcset']).split(" ")[-4]
         title = main['title']
-        new_headline = Headline()
-        new_headline.title = title
-        new_headline.url = link
-        new_headline.image = image_src
-        new_headline.save()
+        news_headline = Headline()
+        news_headline.title = title
+        news_headline.url = link
+        news_headline.image = image_src
+        news_headline.save()
     return redirect("../")
 
 def news_list(request):
