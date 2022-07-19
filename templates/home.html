@@ -15,21 +15,15 @@
             </form>
         </center>
     </div>
-    <div class="card-columns" style="padding: 10px; margin: 20px;">
-        {% for object in object_list %}
-        <div class="card" style="width: 18rem;border:5px black solid;">
-            <img class="card-img-top" src="{{ object.image }}">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <div class="card-body">
-                        <a href="{{object.url}}">
-                            <h5 class="card-title">{{object.title}}</h5>
-                        </a>
-                    </div>
-                </h5>
-            </div>
-        </div>
-        {% endfor %}
+        <p>
+            {% for job_item in job_arr %}
+                <ul>
+                    <li>{{ job_item.title }}</li>
+                    <li>{{ job_item.company }}</li>
+                    <li>{{ job_item.location }}</li>
+                </ul>
+            {% endfor %}
+        </p>
     </div>
     </div>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
