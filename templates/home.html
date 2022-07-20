@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+{% block title %}
+    MES Astronomy Club 
+{% endblock title %}
 
-<body>
+{% block main %}
     <div class="jumbotron">
         <center>
             <h1>MES Astronomy Club</h1>
@@ -15,25 +12,20 @@
             </form>
         </center>
     </div>
-        <p>
-            {% for job_item in job_arr %}
-                <ul>
-                    <li>{{ job_item.title }}</li>
-                    <li>{{ job_item.company }}</li>
-                    <li>{{ job_item.location }}</li>
-                </ul>
-            {% endfor %}
-        </p>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for object in object_list %}
+        <div class="col">
+            <div class="card border border-dark" style="width: 18rem;">
+                <img class="card-img-top" src = "https://astronomy.com{{ object.image }}" alt="{{ object.image }}">
+                <div class="card-body">
+                    <h5 class="card-title"><div class="card-body">
+                    <h5 class="card-title">{{object.title}}</h5>
+                    </div></h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    </div>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
+      
 
-</html>
+{% endblock main %}
