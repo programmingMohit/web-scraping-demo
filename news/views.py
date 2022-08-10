@@ -18,9 +18,10 @@ def scrape(request):
         soups.append(BSoup(page.content, "html.parser"))
     
     # Scraper Function calls for specific websites
-    astronomy_com(soups[0])
+    
     #sky_and_telescope(soups[1])
     space_com(soups[2])
+    astronomy_com(soups[0])
 
     return redirect("../")
 
