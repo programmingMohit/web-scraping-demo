@@ -4,27 +4,6 @@
     MES Astronomy Club 
 {% endblock title %}
 
-{% block main %}
-    <div class="jumbotron">
-        <center>
-            <a href="{% url 'scrape' %}" class="btn btn-success m-1">Astro News</a>
-            </form>
-        </center>
-    </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4 m-1">
-        {% for object in object_list %}
-        <div class="col">
-            <div class="card border border-dark">
-                <img class="card-img-top" src = "https://astronomy.com{{ object.image }}" alt="{{ object.image }}">
-                <div class="card-body">
-                    <h5 class="card-title"><div class="card-body">
-                    <h5 class="card-title">{{object.title}}</h5>
-                    </div></h5>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-      
+{% block main %}      
 
 {% endblock main %}

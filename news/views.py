@@ -23,14 +23,14 @@ def scrape(request):
     space_com(soups[2])
     astronomy_com(soups[0])
 
-    return redirect("../")
+    return redirect("news")
 
 def news_list(request):
     headlines = Headline.objects.all()[::-1]
     context = {
         'object_list': headlines,
     }
-    return render(request, "home.html", context)
+    return render(request, "news.html", context)
 
 # Scraper Functions
 
