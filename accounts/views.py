@@ -36,11 +36,11 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
 
-        user = auth.authenticate(username=username, password=password  )
+        user = auth.authenticate(username=username, password=password)
 
         if user is not None:
-            auth.login(request , user)
-            return redirect('/')    
+            auth.login(request, user)
+            return redirect('news')    
         else:
             messages.info(request, 'Invalid username or password')
             return redirect("/")

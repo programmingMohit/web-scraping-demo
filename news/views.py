@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 import requests
 from bs4 import BeautifulSoup as BSoup
 from news.models import Headline    
+from django.contrib.auth.decorators import login_required
 
 def scrape(request):
 
@@ -25,6 +26,7 @@ def scrape(request):
 
     return redirect("news")
 
+@login_required
 def news_list(request):
     headlines = Headline.objects.all()[::-1]
     context = {
